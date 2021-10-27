@@ -12,7 +12,7 @@ public class Problem2 {
 
     private static void printInfo(Class<?> objectClass) {
         String name = objectClass.getName();
-        System.out.println(getShortName(name));
+        System.out.println(name);
         System.out.println();
 
         Constructor<?>[] constructors = objectClass.getConstructors();
@@ -34,9 +34,5 @@ public class Problem2 {
         for (Method method : methods) {
             System.out.println("\t" + method);
         }
-    }
-
-    private static String getShortName(String name) {
-        return name.substring(name.lastIndexOf(".") + 1);
     }
 }
