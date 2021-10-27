@@ -1,4 +1,4 @@
-package ua.knu.tarkhan.oop.problem2.problem1;
+package ua.knu.tarkhan.oop.problem4;
 
 import java.math.BigDecimal;
 
