@@ -11,11 +11,10 @@ public class Problem2 {
     }
 
     private static void printInfo(Class<?> objectClass) {
-        String name = objectClass.getName();
-        System.out.println(name);
+        System.out.println(objectClass.getName());
         System.out.println();
 
-        Constructor<?>[] constructors = objectClass.getConstructors();
+        Constructor<?>[] constructors = objectClass.getDeclaredConstructors();
         System.out.println("Constructors:");
         for (Constructor<?> constructor : constructors) {
             System.out.println("\t" + constructor);
