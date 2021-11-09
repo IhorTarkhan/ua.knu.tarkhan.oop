@@ -14,7 +14,7 @@ class MyHandler extends DefaultHandler {
     private final List<TouristVoucher> result = new ArrayList<>();
     private StringBuilder value = null;
     private TouristVoucher current = null;
-    private String taq = "";
+    private String tag = "";
 
     public List<TouristVoucher> getResult() {
         return result;
@@ -22,7 +22,7 @@ class MyHandler extends DefaultHandler {
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
-        taq = qName;
+        tag = qName;
         value = new StringBuilder();
         if (qName.equalsIgnoreCase("touristVoucher")) {
             current = new TouristVoucher();
@@ -32,7 +32,7 @@ class MyHandler extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) {
-        switch (taq) {
+        switch (tag) {
             case "type" -> current.setType(Type.valueOf(value.toString().trim()));
             case "country" -> current.setCountry(value.toString().trim());
             case "days" -> current.setDays(Integer.valueOf(value.toString().trim()));

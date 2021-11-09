@@ -3,6 +3,7 @@ package ua.knu.tarkhan.oop.lab2;
 import ua.knu.tarkhan.oop.Path;
 import ua.knu.tarkhan.oop.lab2.parser.dom.MyDOMParser;
 import ua.knu.tarkhan.oop.lab2.parser.sax.MySAXParser;
+import ua.knu.tarkhan.oop.lab2.parser.stax.MyStAXParser;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +15,8 @@ public class Main {
 
         System.out.println("SAX parser");
         new MySAXParser().parseXML(xml_path, xsd_path).forEach(System.out::println);
+
+        System.out.println("StAX parser");
+        new MyStAXParser().parseXML(xml_path, xsd_path).forEach(System.out::println);
     }
 }
