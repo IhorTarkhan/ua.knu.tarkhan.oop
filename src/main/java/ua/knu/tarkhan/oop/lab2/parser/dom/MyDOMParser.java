@@ -20,15 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MyDOMParser {
-    private final String xml_path;
-    private final String xsd_path;
-
-    public MyDOMParser(String xml_path, String xsd_path) {
-        this.xml_path = xml_path;
-        this.xsd_path = xsd_path;
-    }
-
-    public List<TouristVoucher> parseXML() {
+    public List<TouristVoucher> parseXML(String xml_path, String xsd_path) {
         ValidatorXML.validateAgainstXSD(xml_path, xsd_path);
         List<TouristVoucher> knives = new ArrayList<>();
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -48,15 +40,15 @@ public class MyDOMParser {
                         new TouristVoucher(
                                 Type.valueOf(getString(element, "type")),
                                 getString(element, "country"),
-                                Integer.parseInt(getString(element, "days")),
+                                Integer.valueOf(getString(element, "days")),
                                 Transport.valueOf(getString(element, "transport")),
                                 new Hotel(
-                                        Integer.parseInt(getString(element, "stars")),
-                                        Integer.parseInt(getString(element, "sits")),
+                                        Integer.valueOf(getString(element, "stars")),
+                                        Integer.valueOf(getString(element, "sits")),
                                         Boolean.valueOf(getString(element, "isFood")),
                                         Boolean.valueOf(getString(element, "isTV"))
                                 ),
-                                Integer.parseInt(getString(element, "cost"))
+                                Integer.valueOf(getString(element, "cost"))
                         )
                 );
             }
