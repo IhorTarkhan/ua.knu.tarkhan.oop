@@ -1,10 +1,10 @@
 package ua.knu.tarkhan.oop.problem4;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Person {
+public class Person extends PersonParent implements Serializable {
     public static Long id;
-    protected String name;
     int age;
     private BigDecimal graduate;
 
@@ -12,7 +12,7 @@ public class Person {
     }
 
     public Person(Long id, String name, int age, BigDecimal graduate) {
-        this.id = id;
+        Person.id = id;
         this.name = name;
         this.age = age;
         this.graduate = graduate;
@@ -23,15 +23,7 @@ public class Person {
     }
 
     public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        Person.id = id;
     }
 
     int getAge() {
