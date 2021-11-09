@@ -1,0 +1,45 @@
+<touristVouchers>
+
+    <touristVoucher>
+        <type>WEEKEND</type>
+        <country>UK</country>
+        <days>3</days>
+        <transport>AIR</transport>
+        <hotel>
+            <stars>5</stars>
+            <sits>1</sits>
+            <isFood>true</isFood>
+            <isTV>true</isTV>
+        </hotel>
+        <cost>3000</cost>
+    </touristVoucher>
+
+    <touristVoucher>
+        <type>EXCURSION</type>
+        <country>USA</country>
+        <days>5</days>
+        <transport>RAILWAY</transport>
+        <hotel>
+            <stars>3</stars>
+            <sits>1</sits>
+            <isFood>true</isFood>
+            <isTV>false</isTV>
+        </hotel>
+        <cost>15000</cost>
+    </touristVoucher>
+
+    <touristVoucher>
+        <type>REST</type>
+        <country>Chine</country>
+        <days>13</days>
+        <transport>AUTO</transport>
+        <hotel>
+            <stars>2</stars>
+            <sits>4</sits>
+            <isFood>false</isFood>
+            <isTV>true</isTV>
+        </hotel>
+        <cost>1000</cost>
+    </touristVoucher>
+
+</touristVouchers>
