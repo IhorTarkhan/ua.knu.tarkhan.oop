@@ -1,10 +1,12 @@
 package ua.knu.tarkhan.oop.problem1;
 
+import ua.knu.tarkhan.oop.Path;
+
 import java.io.*;
 
 public class Problem1 {
     public static void main(String[] args) {
-        String filename = "src/main/java/ua/knu/tarkhan/oop/problem1/file.ser";
+        String filename = Path.ROOT + "problem1/file.ser";
         DemoSerializable object = new DemoSerializable(1, "test");
 
         serialize(object, filename);

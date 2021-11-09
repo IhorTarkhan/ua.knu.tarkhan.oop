@@ -1,11 +1,13 @@
 package ua.knu.tarkhan.oop.lab1.util;
 
+import ua.knu.tarkhan.oop.Path;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SQLConnector {
-    public static final String DB_URL = "jdbc:sqlite:src/main/java/ua/knu/tarkhan/oop/lab1/sample.db";
+    public static final String DB_URL = "jdbc:sqlite:" + Path.ROOT + "lab1/sample.db";
 
     public SQLConnector() {
         // load the sqlite-JDBC driver using the current class loader
