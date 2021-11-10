@@ -6,6 +6,7 @@ import ua.knu.tarkhan.oop.lab2.domain.Hotel;
 import ua.knu.tarkhan.oop.lab2.domain.TouristVoucher;
 import ua.knu.tarkhan.oop.lab2.domain.Transport;
 import ua.knu.tarkhan.oop.lab2.domain.Type;
+import ua.knu.tarkhan.oop.lab2.parser.MyParser;
 import ua.knu.tarkhan.oop.lab2.validator.ValidatorXML;
 
 import javax.xml.stream.XMLEventReader;
@@ -16,7 +17,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyStAXParser {
+public class MyStAXParser implements MyParser {
     @SneakyThrows
     public List<TouristVoucher> parseXML(String xml_path, String xsd_path) {
         ValidatorXML.validateAgainstXSD(xml_path, xsd_path);

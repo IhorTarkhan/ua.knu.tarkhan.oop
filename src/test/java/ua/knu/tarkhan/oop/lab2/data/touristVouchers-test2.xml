@@ -1,0 +1,17 @@
+<touristVouchers>
+
+    <touristVoucher>
+        <type>WEEKEND</type>
+        <country>UK</country>
+        <days>hhh</days>
+        <transport>AIR</transport>
+        <hotel>
+            <stars>5</stars>
+            <sits>1</sits>
+            <isFood>true</isFood>
+            <isTV>true</isTV>
+        </hotel>
+        <cost>3000</cost>
+    </touristVoucher>
+
+</touristVouchers>

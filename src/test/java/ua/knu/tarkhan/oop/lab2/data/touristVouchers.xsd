@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="touristVouchers" type="TouristVouchers"/>
+
+    <xsd:complexType name="TouristVouchers">
+        <xsd:sequence>
+            <xsd:element name="touristVoucher" type="TouristVoucher" minOccurs="0"
+                         maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="TouristVoucher">
+        <xsd:sequence>
+            <xsd:element name="type" type="Type"/>
+            <xsd:element name="country" type="xsd:string"/>
+            <xsd:element name="days" type="xsd:int"/>
+            <xsd:element name="transport" type="Transport"/>
+            <xsd:element name="hotel" type="Hotel"/>
+            <xsd:element name="cost" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="Type">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="WEEKEND"/>
+            <xsd:enumeration value="EXCURSION"/>
+            <xsd:enumeration value="REST"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Transport">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AIR"/>
+            <xsd:enumeration value="RAILWAY"/>
+            <xsd:enumeration value="AUTO"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Hotel">
+        <xsd:sequence>
+            <xsd:element name="stars" type="xsd:int"/>
+            <xsd:element name="sits" type="xsd:int"/>
+            <xsd:element name="isFood" type="xsd:boolean"/>
+            <xsd:element name="isTV" type="xsd:boolean"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>
