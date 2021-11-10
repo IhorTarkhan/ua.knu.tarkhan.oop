@@ -2,9 +2,11 @@ package ua.knu.tarkhan.oop.problem2;
 
 import lombok.SneakyThrows;
 
-public class ResultAlgorithm implements Runnable {
+import java.util.concurrent.RecursiveTask;
+
+public class ResultAlgorithm extends RecursiveTask<ResultArgument> {
     private final CoefficientsArgument coefficients;
-    private ResultArgument result;
+    private final ResultArgument result;
 
     public ResultAlgorithm(CoefficientsArgument coefficients, ResultArgument result) {
         this.coefficients = coefficients;
@@ -13,17 +15,16 @@ public class ResultAlgorithm implements Runnable {
 
     @SneakyThrows
     @Override
-    public void run() {
+    public ResultArgument compute() {
         if (result.index >= 0) {
             result.x.set(result.index, coefficients.alpha.get(result.index) * result.x.get(result.index + 1) + coefficients.beta.get(result.index));
             result.index--;
 
             ResultAlgorithm target = new ResultAlgorithm(coefficients, result);
-            Thread thread = new Thread(target);
-            thread.start();
-            thread.join();
-            result = target.result;
+            target.fork();
+            return target.join();
         }
+        return result;
     }
 
     public ResultArgument getResult() {
