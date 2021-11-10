@@ -34,7 +34,6 @@ public class Problem3 {
                         System.out.println("2.0");
 
                         subThread.start();
-                        subThread.join();
                     } catch (InterruptedException e) {
                         System.out.println("ERROR");
                     }

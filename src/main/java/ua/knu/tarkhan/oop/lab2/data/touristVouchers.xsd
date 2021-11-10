@@ -11,14 +11,14 @@
     </xsd:complexType>
 
     <xsd:complexType name="TouristVoucher">
-        <xsd:sequence>
+        <xsd:all>
             <xsd:element name="type" type="Type"/>
             <xsd:element name="country" type="xsd:string"/>
             <xsd:element name="days" type="xsd:int"/>
             <xsd:element name="transport" type="Transport"/>
             <xsd:element name="hotel" type="Hotel"/>
             <xsd:element name="cost" type="xsd:int"/>
-        </xsd:sequence>
+        </xsd:all>
     </xsd:complexType>
 
     <xsd:simpleType name="Type">

@@ -1,8 +1,8 @@
 <touristVouchers>
 
     <touristVoucher>
-        <type>WEEKEND</type>
         <country>UK</country>
+        <type>WEEKEND</type>
         <days>3</days>
         <transport>AIR</transport>
         <hotel>

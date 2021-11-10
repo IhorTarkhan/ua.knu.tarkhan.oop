@@ -5,7 +5,7 @@ import ua.knu.tarkhan.oop.lab2.parser.dom.MyDOMParser;
 import ua.knu.tarkhan.oop.lab2.parser.sax.MySAXParser;
 import ua.knu.tarkhan.oop.lab2.parser.stax.MyStAXParser;
 
-public class Main {
+public class Lab2 {
     public static void main(String[] args) {
         String xml_path = Path.ROOT + "lab2/data/touristVouchers.xml";
         String xsd_path = Path.ROOT + "lab2/data/touristVouchers.xsd";
