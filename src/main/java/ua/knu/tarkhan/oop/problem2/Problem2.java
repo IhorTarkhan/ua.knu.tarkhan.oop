@@ -9,16 +9,6 @@ public class Problem2 {
         List<Double> c = List.of(1.0, 3.0, 2.0);
         List<Double> f = List.of(1.0, 3.0, 2.0);
 
-        Algorithm al = new Algorithm(a, b, c, f);
-
-        al.start();
-
-        try {
-            al.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(al.getResult());
+        System.out.println(Algorithm.getResult(a, b, c, f));
     }
 }

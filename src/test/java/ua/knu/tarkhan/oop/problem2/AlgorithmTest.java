@@ -36,14 +36,7 @@ class AlgorithmTest {
     }
 
     private void extracted(List<Double> a, List<Double> b, List<Double> c, List<Double> f, List<Double> expRes) {
-        Algorithm al = new Algorithm(a, b, c, f);
-        al.start();
-        try {
-            al.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        final List<Double> result = al.getResult();
+        List<Double> result = Algorithm.getResult(a, b, c, f);
 
         assertEquals(expRes.size(), result.size());
 
