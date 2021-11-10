@@ -45,6 +45,8 @@ class AlgorithmTest {
         }
         final List<Double> result = al.getResult();
 
+        assertEquals(expRes.size(), result.size());
+
         for (int i = 0; i < expRes.size(); i++) {
             assertEquals(expRes.get(i), result.get(i), 0.001);
         }
