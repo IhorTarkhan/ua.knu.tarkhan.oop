@@ -25,12 +25,15 @@ public class Algorithm extends Thread {
         Double temp2 = c.get(c.size() - 1) + coefficients.alpha.get(coefficients.alpha.size() - 1) * a.get(a.size() - 1);
         ResultArgument result = new ResultArgument(temp1 / temp2, f.size());
         calculateResult(coefficients, result);
+
         this.x = result.x;
     }
 
     private void calculateResult(CoefficientsArgument coefficients, ResultArgument result) {
-        for (int i = result.x.size() - 2; i >= 0; i--) {
-            result.x.set(i, coefficients.alpha.get(i) * result.x.get(i + 1) + coefficients.beta.get(i));
+        if (result.index >= 0) {
+            result.x.set(result.index, coefficients.alpha.get(result.index) * result.x.get(result.index + 1) + coefficients.beta.get(result.index));
+            result.index--;
+            calculateResult(coefficients, result);
         }
     }
 
