@@ -6,17 +6,13 @@ import java.util.List;
 
 public class Problem2 {
     public static void main(String[] args) {
-        List<Double> a = new ArrayList<>();
-        a.add(1.0);
-        List<Double> b = new ArrayList<>();
-        b.add(1.0);
-        List<Double> c = new ArrayList<>();
-        c.add(1.0);
-        c.add(-1.0);
-        List<Double> f = new ArrayList<>();
-        f.add(-2.0);
-        f.add(0.0);
+        List<Double> a = List.of(1.0);
+        List<Double> b = List.of(1.0);
+        List<Double> c = List.of(1.0, -1.0);
+        List<Double> f = List.of(-2.0, 0.0);
+
         List<Double> result = new ArrayList<>(Collections.nCopies(f.size(), 0.0));
+
         Algorithm al = new Algorithm(a, b, c, f, result, 0, result.size() / 2);
         AlgorithmReverse al2 = new AlgorithmReverse(a, b, c, f, result, result.size() / 2, result.size());
 
@@ -29,7 +25,6 @@ public class Problem2 {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
 
         System.out.println(result);
     }
